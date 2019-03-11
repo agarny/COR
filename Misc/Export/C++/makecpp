@@ -1,0 +1,5 @@
+#/bin/sh
+
+CC -o maincpp main.cpp test.cpp -lm
+
+\rm *.o

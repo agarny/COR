@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{1857b35c-bf62-46b6-a8b3-1ad91f09d4d6}</ProjectGuid>
+    <MainSource>VCLs.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>C:\Users\Public\Documents\RAD Studio\5.0\Bpl\VCLs.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_DcuOutput>Temp</DCC_DcuOutput>
+    <DCC_ObjOutput>Temp</DCC_ObjOutput>
+    <DCC_HppOutput>Temp</DCC_HppOutput>
+    <DCC_DcpOutput>Temp</DCC_DcpOutput>
+    <DCC_UnitSearchPath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_UnitSearchPath>
+    <DCC_ResourcePath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_ResourcePath>
+    <DCC_ObjPath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_ObjPath>
+    <DCC_IncludePath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_IncludePath>
+    <DCC_IMPLICIT_IMPORT>False</DCC_IMPLICIT_IMPORT>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_DcuOutput>Temp</DCC_DcuOutput>
+    <DCC_ObjOutput>Temp</DCC_ObjOutput>
+    <DCC_HppOutput>Temp</DCC_HppOutput>
+    <DCC_DcpOutput>Temp</DCC_DcpOutput>
+    <DCC_UnitSearchPath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_UnitSearchPath>
+    <DCC_ResourcePath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_ResourcePath>
+    <DCC_ObjPath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_ObjPath>
+    <DCC_IncludePath>Src\Common;Src\Extra\DeCAL;Src\Extra\JCL\Experts\Common;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\VCL</DCC_IncludePath>
+    <DCC_IMPLICIT_IMPORT>False</DCC_IMPLICIT_IMPORT>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><Package_Options><Package_Options Name="ImplicitBuild">False</Package_Options><Package_Options Name="DesigntimeOnly">False</Package_Options><Package_Options Name="RuntimeOnly">False</Package_Options></Package_Options><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">0</VersionInfo><VersionInfo Name="MinorVer">9</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">2057</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">University of Oxford</VersionInfoKeys><VersionInfoKeys Name="FileDescription">Cellular Open Resource - Components</VersionInfoKeys><VersionInfoKeys Name="FileVersion">0.9.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName">COR Components</VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">0.9</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">VCLs.dpk</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="VCLs.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="C:\Program Files (x86)\CodeGear\RAD Studio\5.0\bin\dbrtl.dcp" />
+    <DCCReference Include="C:\Program Files (x86)\CodeGear\RAD Studio\5.0\bin\designide.dcp" />
+    <DCCReference Include="C:\Program Files (x86)\CodeGear\RAD Studio\5.0\bin\IndySystem.dcp" />
+    <DCCReference Include="C:\Program Files (x86)\CodeGear\RAD Studio\5.0\bin\rtl.dcp" />
+    <DCCReference Include="C:\Program Files (x86)\CodeGear\RAD Studio\5.0\bin\vcl.dcp" />
+    <DCCReference Include="C:\Program Files (x86)\CodeGear\RAD Studio\5.0\bin\vcljpg.dcp" />
+    <DCCReference Include="Src\Extra\JCL\Experts\Debug\Converter\JclDebugIdeImpl.pas" />
+    <DCCReference Include="Src\Extra\JVCL\Run\JvLinkLabel.pas" />
+    <DCCReference Include="Src\Extra\JVCL\Run\JvValidateEdit.pas" />
+    <DCCReference Include="Src\Extra\SynEdit\Source\SynEditPropertyReg.pas" />
+    <DCCReference Include="Src\Extra\SynEdit\Source\SynEditReg.pas" />
+    <DCCReference Include="Src\Extra\SynEdit\SynGen\SynHighlighterCellML.pas" />
+    <DCCReference Include="Src\Extra\Virtual Treeview\Design\VirtualTreesReg.pas" />
+    <DCCReference Include="Src\VCL\CmdGraph.pas" />
+    <DCCReference Include="Src\VCL\OGL.pas" />
+    <DCCReference Include="Src\VCL\OGLGraphPanel.pas" />
+    <DCCReference Include="Src\VCL\RippledBitmap.pas" />
+    <DCCReference Include="Src\VCL\SyntaxEdit.pas" />
+    <DCCReference Include="Src\VCL\VSTListBox.pas" />
+  </ItemGroup>
+</Project>

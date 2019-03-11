@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:07:41 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="bueno_model_2007" cmeta:id="bueno_model_2007" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <units name="ms">
+      <unit units="second" prefix="milli"/>
+   </units>
+   <units name="per_ms">
+      <unit units="second" prefix="milli" exponent="-1"/>
+   </units>
+   <units name="mV">
+      <unit units="volt" prefix="milli"/>
+   </units>
+   <units name="per_mV">
+      <unit units="volt" prefix="milli" exponent="-1"/>
+   </units>
+   <units name="per_mV_ms">
+      <unit units="mV" exponent="-1"/>
+      <unit units="ms" exponent="-1"/>
+   </units>
+   <units name="mS_per_cm2">
+      <unit units="siemens" prefix="milli"/>
+      <unit units="metre" prefix="centi" exponent="-2"/>
+   </units>
+   <units name="uF_per_cm2">
+      <unit units="farad" prefix="micro"/>
+      <unit units="metre" prefix="centi" exponent="-2"/>
+   </units>
+   <units name="uA_per_cm2">
+      <unit units="ampere" prefix="micro"/>
+      <unit units="metre" prefix="centi" exponent="-2"/>
+   </units>
+   <units name="concentration_units">
+      <unit units="mole" prefix="nano"/>
+      <unit units="metre" prefix="milli" exponent="-3"/>
+   </units>
+   <component name="environment">
+      <variable name="time" units="ms" public_interface="out"/>
+      <variable name="epi" units="dimensionless" initial_value="1" public_interface="out"/>
+      <variable name="endo" units="dimensionless" initial_value="0" public_interface="out"/>
+      <variable name="mcell" units="dimensionless" initial_value="0" public_interface="out"/>
+   </component>
+   <component name="membrane">
+      <variable name="u" units="dimensionless" initial_value="0" public_interface="out"/>
+      <variable name="Vm" units="mV"/>
+      <variable name="V_0" units="mV" initial_value="-83"/>
+      <variable name="V_fi" units="mV" initial_value="2.7"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <variable name="J_fi" units="per_ms" public_interface="in"/>
+      <variable name="J_so" units="per_ms" public_interface="in"/>
+      <variable name="J_si" units="per_ms" public_interface="in"/>
+      <variable name="J_stim" units="per_ms"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>J_stim</ci>
+            <piecewise>
+               <piece>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="per_ms">1</cn>
+                  </apply>
+                  <apply>
+                     <and/>
+                     <apply>
+                        <geq/>
+                        <ci>time</ci>
+                        <cn cellml:units="ms">100</cn>
+                     </apply>
+                     <apply>
+                        <leq/>
+                        <ci>time</ci>
+                        <cn cellml:units="ms">101</cn>
+                     </apply>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="per_ms">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>u</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <apply>
+                  <plus/>
+                  <ci>J_fi</ci>
+                  <ci>J_so</ci>
+                  <ci>J_si</ci>
+                  <ci>J_stim</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Vm</ci>
+            <apply>
+               <plus/>
+               <ci>V_0</ci>
+               <apply>
+                  <times/>
+                  <ci>u</ci>
+                  <apply>
+                     <minus/>
+                     <ci>V_fi</ci>
+                     <ci>V_0</ci>
+                  </apply>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="m">
+      <variable name="m" units="dimensionless" public_interface="out"/>
+      <variable name="u_m" units="dimensionless" initial_value="0.3" public_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>m</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0</cn>
+                  <apply>
+                     <lt/>
+                     <ci>u</ci>
+                     <ci>u_m</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+      </math>
+   </component>
+   <component name="p">
+      <variable name="p" units="dimensionless" public_interface="out"/>
+      <variable name="u_p" units="dimensionless" initial_value="0.13" public_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>p</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0</cn>
+                  <apply>
+                     <lt/>
+                     <ci>u</ci>
+                     <ci>u_p</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+      </math>
+   </component>
+   <component name="q">
+      <variable name="q" units="dimensionless" public_interface="out"/>
+      <variable name="epi" units="dimensionless" public_interface="in"/>
+      <variable name="endo" units="dimensionless" public_interface="in"/>
+      <variable name="mcell" units="dimensionless" public_interface="in"/>
+      <variable name="u_q" units="dimensionless" public_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>u_q</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0.006</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">0.024</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0.1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>q</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0</cn>
+                  <apply>
+                     <lt/>
+                     <ci>u</ci>
+                     <ci>u_q</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+      </math>
+   </component>
+   <component name="r">
+      <variable name="r" units="dimensionless" public_interface="out"/>
+      <variable name="epi" units="dimensionless" public_interface="in"/>
+      <variable name="endo" units="dimensionless" public_interface="in"/>
+      <variable name="mcell" units="dimensionless" public_interface="in"/>
+      <variable name="u_r" units="dimensionless"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>u_r</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0.006</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">0.006</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0.005</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>r</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0</cn>
+                  <apply>
+                     <lt/>
+                     <ci>u</ci>
+                     <ci>u_r</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+      </math>
+   </component>
+   <component name="fast_inward_current">
+      <variable name="J_fi" units="per_ms" public_interface="out"/>
+      <variable name="tau_fi" units="ms"/>
+      <variable name="epi" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="endo" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="mcell" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="m" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="q" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="u_p" units="dimensionless" public_interface="in"/>
+      <variable name="u_u" units="dimensionless"/>
+      <variable name="u_m" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in" private_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="u_q" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="v" units="dimensionless" private_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>u_u</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1.55</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">1.56</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">1.61</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_fi</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">0.11</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">0.104</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">0.078</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>J_fi</ci>
+            <apply>
+               <divide/>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <ci>m</ci>
+                  </apply>
+                  <ci>v</ci>
+                  <apply>
+                     <minus/>
+                     <ci>u</ci>
+                     <ci>u_m</ci>
+                  </apply>
+                  <apply>
+                     <minus/>
+                     <ci>u_u</ci>
+                     <ci>u</ci>
+                  </apply>
+               </apply>
+               <ci>tau_fi</ci>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="fast_inward_current_v_gate">
+      <variable name="v" units="dimensionless" initial_value="1" public_interface="out"/>
+      <variable name="v_inf" units="dimensionless"/>
+      <variable name="epi" units="dimensionless" public_interface="in"/>
+      <variable name="endo" units="dimensionless" public_interface="in"/>
+      <variable name="mcell" units="dimensionless" public_interface="in"/>
+      <variable name="tau_v_minus" units="ms"/>
+      <variable name="tau_v1_minus" units="ms"/>
+      <variable name="tau_v2_minus" units="ms"/>
+      <variable name="tau_v_plus" units="ms" initial_value="1.45"/>
+      <variable name="q" units="dimensionless" public_interface="in"/>
+      <variable name="m" units="dimensionless" public_interface="in"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="u_q" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>tau_v2_minus</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">1150</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">10</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">1.45</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_v1_minus</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">60</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">75</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">80</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>v_inf</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <lt/>
+                     <ci>u</ci>
+                     <ci>u_q</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_v_minus</ci>
+            <apply>
+               <plus/>
+               <apply>
+                  <times/>
+                  <ci>q</ci>
+                  <ci>tau_v2_minus</ci>
+               </apply>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <ci>q</ci>
+                  </apply>
+                  <ci>tau_v1_minus</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>v</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>m</ci>
+                     </apply>
+                     <apply>
+                        <minus/>
+                        <ci>v_inf</ci>
+                        <ci>v</ci>
+                     </apply>
+                  </apply>
+                  <ci>tau_v_minus</ci>
+               </apply>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <ci>m</ci>
+                     <ci>v</ci>
+                  </apply>
+                  <ci>tau_v_plus</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="slow_outward_current">
+      <variable name="J_so" units="per_ms" public_interface="out"/>
+      <variable name="epi" units="dimensionless" public_interface="in"/>
+      <variable name="endo" units="dimensionless" public_interface="in"/>
+      <variable name="mcell" units="dimensionless" public_interface="in"/>
+      <variable name="tau_o" units="ms"/>
+      <variable name="tau_o1" units="ms"/>
+      <variable name="tau_o2" units="ms"/>
+      <variable name="tau_so" units="ms"/>
+      <variable name="tau_so1" units="ms"/>
+      <variable name="tau_so2" units="ms"/>
+      <variable name="k_so" units="dimensionless"/>
+      <variable name="u_so" units="dimensionless"/>
+      <variable name="r" units="dimensionless" public_interface="in"/>
+      <variable name="p" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>tau_o1</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">400</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">470</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">410</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_o2</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">6</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">6</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">7</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_so1</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">30.02</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">40</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">91</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_so2</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">0.996</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">1.2</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">0.8</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>k_so</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">2.046</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">2</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">2.1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>u_so</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0.65</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">0.65</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0.6</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_o</ci>
+            <apply>
+               <plus/>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <ci>r</ci>
+                  </apply>
+                  <ci>tau_o1</ci>
+               </apply>
+               <apply>
+                  <times/>
+                  <ci>r</ci>
+                  <ci>tau_o2</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_so</ci>
+            <apply>
+               <plus/>
+               <ci>tau_so1</ci>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <apply>
+                        <minus/>
+                        <ci>tau_so2</ci>
+                        <ci>tau_so1</ci>
+                     </apply>
+                     <apply>
+                        <plus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <apply>
+                           <tanh/>
+                           <apply>
+                              <times/>
+                              <ci>k_so</ci>
+                              <apply>
+                                 <minus/>
+                                 <ci>u</ci>
+                                 <ci>u_so</ci>
+                              </apply>
+                           </apply>
+                        </apply>
+                     </apply>
+                  </apply>
+                  <cn cellml:units="dimensionless">2</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>J_so</ci>
+            <apply>
+               <plus/>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <ci>u</ci>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>p</ci>
+                     </apply>
+                  </apply>
+                  <ci>tau_o</ci>
+               </apply>
+               <apply>
+                  <divide/>
+                  <ci>p</ci>
+                  <ci>tau_so</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="slow_inward_current">
+      <variable name="J_si" units="per_ms" public_interface="out"/>
+      <variable name="epi" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="endo" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="mcell" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="tau_si" units="ms"/>
+      <variable name="p" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="r" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="time" units="ms" public_interface="in" private_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="w" units="dimensionless" private_interface="in"/>
+      <variable name="s" units="dimensionless" private_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>tau_si</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">1.8875</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">2.9013</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">3.3849</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>J_si</ci>
+            <apply>
+               <divide/>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <ci>p</ci>
+                  </apply>
+                  <ci>w</ci>
+                  <ci>s</ci>
+               </apply>
+               <ci>tau_si</ci>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="slow_inward_current_w_gate">
+      <variable name="w" units="dimensionless" initial_value="1" public_interface="out"/>
+      <variable name="epi" units="dimensionless" public_interface="in"/>
+      <variable name="endo" units="dimensionless" public_interface="in"/>
+      <variable name="mcell" units="dimensionless" public_interface="in"/>
+      <variable name="w_inf" units="dimensionless"/>
+      <variable name="tau_winf" units="ms"/>
+      <variable name="wstar_inf" units="dimensionless"/>
+      <variable name="tau_w_minus" units="ms"/>
+      <variable name="tau_w1_minus" units="ms"/>
+      <variable name="tau_w2_minus" units="ms"/>
+      <variable name="k_w_minus" units="dimensionless"/>
+      <variable name="u_w_minus" units="dimensionless"/>
+      <variable name="tau_w_plus" units="ms"/>
+      <variable name="r" units="dimensionless" public_interface="in"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>tau_winf</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">0.07</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">0.0273</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">0.01</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>wstar_inf</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0.94</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">0.78</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0.5</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_w1_minus</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">60</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">6</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">70</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_w2_minus</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">15</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">140</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">8</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>k_w_minus</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">65</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">200</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">200</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>u_w_minus</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0.03</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="dimensionless">0.016</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0.016</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_w_plus</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">200</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">280</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">280</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>w_inf</ci>
+            <apply>
+               <plus/>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <ci>r</ci>
+                  </apply>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <apply>
+                        <divide/>
+                        <apply>
+                           <times/>
+                           <ci>u</ci>
+                           <cn cellml:units="ms">1</cn>
+                        </apply>
+                        <ci>tau_winf</ci>
+                     </apply>
+                  </apply>
+               </apply>
+               <apply>
+                  <times/>
+                  <ci>r</ci>
+                  <ci>wstar_inf</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_w_minus</ci>
+            <apply>
+               <plus/>
+               <ci>tau_w1_minus</ci>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <apply>
+                        <minus/>
+                        <ci>tau_w2_minus</ci>
+                        <ci>tau_w1_minus</ci>
+                     </apply>
+                     <apply>
+                        <plus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <apply>
+                           <tanh/>
+                           <apply>
+                              <times/>
+                              <ci>k_w_minus</ci>
+                              <apply>
+                                 <minus/>
+                                 <ci>u</ci>
+                                 <ci>u_w_minus</ci>
+                              </apply>
+                           </apply>
+                        </apply>
+                     </apply>
+                  </apply>
+                  <cn cellml:units="dimensionless">2</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>w</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>r</ci>
+                     </apply>
+                     <apply>
+                        <minus/>
+                        <ci>w_inf</ci>
+                        <ci>w</ci>
+                     </apply>
+                  </apply>
+                  <ci>tau_w_minus</ci>
+               </apply>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <ci>r</ci>
+                     <ci>w</ci>
+                  </apply>
+                  <ci>tau_w_plus</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="slow_inward_current_s_gate">
+      <variable name="s" units="dimensionless" initial_value="0" public_interface="out"/>
+      <variable name="epi" units="dimensionless" public_interface="in"/>
+      <variable name="endo" units="dimensionless" public_interface="in"/>
+      <variable name="mcell" units="dimensionless" public_interface="in"/>
+      <variable name="tau_s" units="ms"/>
+      <variable name="tau_s1" units="ms" initial_value="2.7342"/>
+      <variable name="tau_s2" units="ms"/>
+      <variable name="k_s" units="dimensionless" initial_value="2.0994"/>
+      <variable name="u_s" units="dimensionless" initial_value="0.9087"/>
+      <variable name="p" units="dimensionless" public_interface="in"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>tau_s2</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="ms">16</cn>
+                  <apply>
+                     <eq/>
+                     <ci>epi</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <piece>
+                  <cn cellml:units="ms">2</cn>
+                  <apply>
+                     <eq/>
+                     <ci>endo</ci>
+                     <cn cellml:units="dimensionless">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="ms">4</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>tau_s</ci>
+            <apply>
+               <plus/>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <ci>p</ci>
+                  </apply>
+                  <ci>tau_s1</ci>
+               </apply>
+               <apply>
+                  <times/>
+                  <ci>p</ci>
+                  <ci>tau_s2</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>s</ci>
+            </apply>
+            <apply>
+               <divide/>
+               <apply>
+                  <minus/>
+                  <apply>
+                     <divide/>
+                     <apply>
+                        <plus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <apply>
+                           <tanh/>
+                           <apply>
+                              <times/>
+                              <ci>k_s</ci>
+                              <apply>
+                                 <minus/>
+                                 <ci>u</ci>
+                                 <ci>u_s</ci>
+                              </apply>
+                           </apply>
+                        </apply>
+                     </apply>
+                     <cn cellml:units="dimensionless">2</cn>
+                  </apply>
+                  <ci>s</ci>
+               </apply>
+               <ci>tau_s</ci>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <group>
+      <relationship_ref relationship="containment"/>
+      <component_ref component="membrane">
+         <component_ref component="fast_inward_current">
+            <component_ref component="fast_inward_current_v_gate"/>
+         </component_ref>
+         <component_ref component="slow_outward_current"/>
+         <component_ref component="slow_inward_current">
+            <component_ref component="slow_inward_current_w_gate"/>
+            <component_ref component="slow_inward_current_s_gate"/>
+         </component_ref>
+         <component_ref component="m"/>
+         <component_ref component="p"/>
+         <component_ref component="q"/>
+         <component_ref component="r"/>
+      </component_ref>
+   </group>
+   <group>
+      <relationship_ref relationship="encapsulation"/>
+      <component_ref component="fast_inward_current">
+         <component_ref component="fast_inward_current_v_gate"/>
+      </component_ref>
+      <component_ref component="slow_inward_current">
+         <component_ref component="slow_inward_current_w_gate"/>
+         <component_ref component="slow_inward_current_s_gate"/>
+      </component_ref>
+   </group>
+   <connection>
+      <map_components component_1="membrane" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="m" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="q" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+   </connection>
+   <connection>
+      <map_components component_1="r" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+   </connection>
+   <connection>
+      <map_components component_1="fast_inward_current" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+   </connection>
+   <connection>
+      <map_components component_1="slow_outward_current" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+   </connection>
+   <connection>
+      <map_components component_1="slow_inward_current" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="fast_inward_current"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="J_fi" variable_2="J_fi"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="slow_outward_current"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="J_so" variable_2="J_so"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="slow_inward_current"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="J_si" variable_2="J_si"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="m"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="p"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="q"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="r"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="m" component_2="fast_inward_current"/>
+      <map_variables variable_1="m" variable_2="m"/>
+      <map_variables variable_1="u_m" variable_2="u_m"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="fast_inward_current"/>
+      <map_variables variable_1="u_p" variable_2="u_p"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="slow_outward_current"/>
+      <map_variables variable_1="p" variable_2="p"/>
+   </connection>
+   <connection>
+      <map_components component_1="r" component_2="slow_outward_current"/>
+      <map_variables variable_1="r" variable_2="r"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="slow_inward_current"/>
+      <map_variables variable_1="p" variable_2="p"/>
+   </connection>
+   <connection>
+      <map_components component_1="r" component_2="slow_inward_current"/>
+      <map_variables variable_1="r" variable_2="r"/>
+   </connection>
+   <connection>
+      <map_components component_1="q" component_2="fast_inward_current"/>
+      <map_variables variable_1="q" variable_2="q"/>
+      <map_variables variable_1="u_q" variable_2="u_q"/>
+   </connection>
+   <connection>
+      <map_components component_1="fast_inward_current" component_2="fast_inward_current_v_gate"/>
+      <map_variables variable_1="v" variable_2="v"/>
+      <map_variables variable_1="q" variable_2="q"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+      <map_variables variable_1="m" variable_2="m"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="u_q" variable_2="u_q"/>
+   </connection>
+   <connection>
+      <map_components component_1="slow_inward_current" component_2="slow_inward_current_w_gate"/>
+      <map_variables variable_1="w" variable_2="w"/>
+      <map_variables variable_1="r" variable_2="r"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="slow_inward_current" component_2="slow_inward_current_s_gate"/>
+      <map_variables variable_1="s" variable_2="s"/>
+      <map_variables variable_1="p" variable_2="p"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="epi" variable_2="epi"/>
+      <map_variables variable_1="endo" variable_2="endo"/>
+      <map_variables variable_1="mcell" variable_2="mcell"/>
+   </connection>
+</model>

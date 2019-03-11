@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:07:55 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="endresen_model_1997" cmeta:id="endresen_model_1997" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <units name="per_second">
+      <unit units="second" exponent="-1"/>
+   </units>
+   <units name="millivolt">
+      <unit units="volt" prefix="milli"/>
+   </units>
+   <units name="per_millivolt">
+      <unit units="volt" prefix="milli" exponent="-1"/>
+   </units>
+   <units name="picoS">
+      <unit units="siemens" prefix="pico"/>
+   </units>
+   <units name="picoF">
+      <unit units="farad" prefix="pico"/>
+   </units>
+   <units name="femtoA">
+      <unit units="ampere" prefix="femto"/>
+   </units>
+   <units name="molar">
+      <unit units="mole"/>
+      <unit units="litre" exponent="-1"/>
+   </units>
+   <component name="environment">
+      <variable name="time" units="second" public_interface="out"/>
+   </component>
+   <component name="membrane">
+      <variable name="V" units="millivolt" initial_value="-52.07606" public_interface="out"/>
+      <variable name="Cm" units="picoF" initial_value="60"/>
+      <variable name="time" units="second" public_interface="in"/>
+      <variable name="i_s" units="femtoA" public_interface="in"/>
+      <variable name="i_K" units="femtoA" public_interface="in"/>
+      <variable name="i_K_ACh" units="femtoA" public_interface="in"/>
+      <variable name="i_j" units="femtoA" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>V</ci>
+            </apply>
+            <apply>
+               <divide/>
+               <apply>
+                  <minus/>
+                  <apply>
+                     <plus/>
+                     <ci>i_s</ci>
+                     <ci>i_K</ci>
+                     <ci>i_K_ACh</ci>
+                     <ci>i_j</ci>
+                  </apply>
+               </apply>
+               <ci>Cm</ci>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="calcium_channel">
+      <variable name="i_s" units="femtoA" public_interface="out"/>
+      <variable name="g_s" units="picoS" initial_value="382.9118"/>
+      <variable name="V_s" units="millivolt" initial_value="214.1429"/>
+      <variable name="V_1" units="millivolt" initial_value="-35.9358"/>
+      <variable name="V_2" units="millivolt" initial_value="7.8589"/>
+      <variable name="V" units="millivolt" public_interface="in" private_interface="out"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>i_s</ci>
+            <apply>
+               <times/>
+               <apply>
+                  <divide/>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <cn cellml:units="dimensionless">2</cn>
+               </apply>
+               <ci>g_s</ci>
+               <apply>
+                  <plus/>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <tanh/>
+                     <apply>
+                        <divide/>
+                        <apply>
+                           <minus/>
+                           <ci>V</ci>
+                           <ci>V_1</ci>
+                        </apply>
+                        <ci>V_2</ci>
+                     </apply>
+                  </apply>
+               </apply>
+               <apply>
+                  <minus/>
+                  <ci>V</ci>
+                  <ci>V_s</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="potassium_channel">
+      <variable name="i_K" units="femtoA" public_interface="out"/>
+      <variable name="g_K" units="picoS" initial_value="536.1093"/>
+      <variable name="V_K" units="millivolt" initial_value="-259.0783"/>
+      <variable name="time" units="second" public_interface="in" private_interface="out"/>
+      <variable name="V" units="millivolt" public_interface="in" private_interface="out"/>
+      <variable name="w" units="dimensionless" private_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>i_K</ci>
+            <apply>
+               <times/>
+               <ci>g_K</ci>
+               <ci>w</ci>
+               <apply>
+                  <minus/>
+                  <ci>V</ci>
+                  <ci>V_K</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="potassium_channel_w_gate">
+      <variable name="w" units="dimensionless" initial_value="0.0008971" public_interface="out"/>
+      <variable name="lambda_w" units="per_second" initial_value="20.7796"/>
+      <variable name="V_3" units="millivolt" initial_value="-27.9375"/>
+      <variable name="V_4" units="millivolt" initial_value="6.321"/>
+      <variable name="V" units="millivolt" public_interface="in"/>
+      <variable name="time" units="second" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>w</ci>
+            </apply>
+            <apply>
+               <times/>
+               <ci>lambda_w</ci>
+               <apply>
+                  <cosh/>
+                  <apply>
+                     <divide/>
+                     <apply>
+                        <minus/>
+                        <ci>V</ci>
+                        <ci>V_3</ci>
+                     </apply>
+                     <apply>
+                        <times/>
+                        <cn cellml:units="dimensionless">2</cn>
+                        <ci>V_4</ci>
+                     </apply>
+                  </apply>
+               </apply>
+               <apply>
+                  <minus/>
+                  <apply>
+                     <times/>
+                     <apply>
+                        <divide/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <cn cellml:units="dimensionless">2</cn>
+                     </apply>
+                     <apply>
+                        <plus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <apply>
+                           <tanh/>
+                           <apply>
+                              <divide/>
+                              <apply>
+                                 <minus/>
+                                 <ci>V</ci>
+                                 <ci>V_3</ci>
+                              </apply>
+                              <ci>V_4</ci>
+                           </apply>
+                        </apply>
+                     </apply>
+                  </apply>
+                  <ci>w</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="acetyl_choline_activated_potassium_channel">
+      <variable name="i_K_ACh" units="femtoA" public_interface="out"/>
+      <variable name="time" units="second" public_interface="in" private_interface="out"/>
+      <variable name="V" units="millivolt" public_interface="in" private_interface="out"/>
+      <variable name="u" units="dimensionless" private_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>i_K_ACh</ci>
+            <apply>
+               <times/>
+               <cn cellml:units="dimensionless">1</cn>
+               <cn cellml:units="picoS">0.27</cn>
+               <ci>u</ci>
+               <apply>
+                  <plus/>
+                  <ci>V</ci>
+                  <cn cellml:units="millivolt">90</cn>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="acetyl_choline_activated_potassium_channel_u_gate">
+      <variable name="u" units="dimensionless" initial_value="0.2344555" public_interface="out"/>
+      <variable name="alpha" units="per_second"/>
+      <variable name="beta" units="per_second"/>
+      <variable name="ACh" units="molar" initial_value="1e-6"/>
+      <variable name="V" units="millivolt" public_interface="in"/>
+      <variable name="time" units="second" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>alpha</ci>
+            <apply>
+               <divide/>
+               <cn cellml:units="per_second">0.012332</cn>
+               <apply>
+                  <plus/>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <divide/>
+                     <cn type="e-notation" cellml:units="molar">4.2<sep/>-6</cn>
+                     <ci>ACh</ci>
+                  </apply>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>beta</ci>
+            <apply>
+               <times/>
+               <cn cellml:units="per_second">0.01</cn>
+               <apply>
+                  <exp/>
+                  <apply>
+                     <times/>
+                     <cn cellml:units="per_millivolt">0.0133</cn>
+                     <apply>
+                        <plus/>
+                        <ci>V</ci>
+                        <cn cellml:units="millivolt">40</cn>
+                     </apply>
+                  </apply>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>u</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <apply>
+                  <times/>
+                  <ci>alpha</ci>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <ci>u</ci>
+                  </apply>
+               </apply>
+               <apply>
+                  <times/>
+                  <ci>beta</ci>
+                  <ci>u</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="coupling_current">
+      <variable name="i_j" units="femtoA" public_interface="out"/>
+      <variable name="g_j" units="picoS" initial_value="0"/>
+      <variable name="V" units="millivolt" public_interface="in"/>
+      <variable name="V_B" units="millivolt" initial_value="-50"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>i_j</ci>
+            <apply>
+               <times/>
+               <ci>g_j</ci>
+               <apply>
+                  <minus/>
+                  <ci>V</ci>
+                  <ci>V_B</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <group>
+      <relationship_ref relationship="containment"/>
+      <component_ref component="membrane">
+         <component_ref component="calcium_channel"/>
+         <component_ref component="potassium_channel">
+            <component_ref component="potassium_channel_w_gate"/>
+         </component_ref>
+         <component_ref component="acetyl_choline_activated_potassium_channel">
+            <component_ref component="acetyl_choline_activated_potassium_channel_u_gate"/>
+         </component_ref>
+      </component_ref>
+   </group>
+   <group>
+      <relationship_ref relationship="encapsulation"/>
+      <component_ref component="potassium_channel">
+         <component_ref component="potassium_channel_w_gate"/>
+      </component_ref>
+      <component_ref component="acetyl_choline_activated_potassium_channel">
+         <component_ref component="acetyl_choline_activated_potassium_channel_u_gate"/>
+      </component_ref>
+   </group>
+   <connection>
+      <map_components component_1="membrane" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="potassium_channel" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="acetyl_choline_activated_potassium_channel" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="calcium_channel"/>
+      <map_variables variable_1="V" variable_2="V"/>
+      <map_variables variable_1="i_s" variable_2="i_s"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="potassium_channel"/>
+      <map_variables variable_1="V" variable_2="V"/>
+      <map_variables variable_1="i_K" variable_2="i_K"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="acetyl_choline_activated_potassium_channel"/>
+      <map_variables variable_1="V" variable_2="V"/>
+      <map_variables variable_1="i_K_ACh" variable_2="i_K_ACh"/>
+   </connection>
+   <connection>
+      <map_components component_1="potassium_channel" component_2="potassium_channel_w_gate"/>
+      <map_variables variable_1="w" variable_2="w"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="V" variable_2="V"/>
+   </connection>
+   <connection>
+      <map_components component_1="acetyl_choline_activated_potassium_channel" component_2="acetyl_choline_activated_potassium_channel_u_gate"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="V" variable_2="V"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="coupling_current"/>
+      <map_variables variable_1="V" variable_2="V"/>
+      <map_variables variable_1="i_j" variable_2="i_j"/>
+   </connection>
+</model>

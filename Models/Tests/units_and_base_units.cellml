@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 24/07/2009 at 13:42:02 using:
+
+COR (0.9.31.1297)
+Copyright 2002-2009 Dr Alan Garny
+http://cor.physiol.ox.ac.uk/ - cor@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.cellml.org/
+-->
+<model name="van_der_pol_model_1928" cmeta:id="van_der_pol_model_1928" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <units name="my_unit1" base_units="yes"/>
+   <units name="per_second1">
+      <unit units="second" exponent="-1"/>
+   </units>
+   <units name="per_second2">
+      <unit units="second" exponent="-1"/>
+   </units>
+   <units name="my_unit2" base_units="yes"/>
+   <units name="my_unit3" base_units="yes"/>
+   <units name="per_second3">
+      <unit units="second" exponent="-1"/>
+   </units>
+   <component name="main">
+      <units name="main_my_unit1" base_units="yes"/>
+      <units name="main_per_second1">
+         <unit units="second" exponent="-1"/>
+      </units>
+      <units name="main_per_second2">
+         <unit units="second" exponent="-1"/>
+      </units>
+      <units name="main_my_unit2" base_units="yes"/>
+      <units name="main_my_unit3" base_units="yes"/>
+      <units name="main_per_second3">
+         <unit units="second" exponent="-1"/>
+      </units>
+      <variable name="time" units="second"/>
+      <variable name="x" units="dimensionless" initial_value="-2"/>
+      <variable name="y" units="dimensionless" initial_value="0"/>
+      <variable name="epsilon" units="dimensionless" initial_value="1"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>x</ci>
+            </apply>
+            <apply>
+               <times/>
+               <ci>y</ci>
+               <cn cellml:units="per_second1">1</cn>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>y</ci>
+            </apply>
+            <apply>
+               <times/>
+               <apply>
+                  <minus/>
+                  <apply>
+                     <times/>
+                     <ci>epsilon</ci>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <apply>
+                           <power/>
+                           <ci>x</ci>
+                           <cn cellml:units="dimensionless">2</cn>
+                        </apply>
+                     </apply>
+                     <ci>y</ci>
+                  </apply>
+                  <ci>x</ci>
+               </apply>
+               <cn cellml:units="per_second1">1</cn>
+            </apply>
+         </apply>
+      </math>
+   </component>
+</model>

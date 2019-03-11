@@ -1,0 +1,1 @@
+The COR installer is generated using NSIS (Nullsoft Scriptable Install System), which can be found at http://nsis.sourceforge.net/.

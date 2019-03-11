@@ -1,0 +1,1 @@
+Both Intel C++ 10.1.021 and Microsoft Visual C++ 2008 SP1 are required to build the Math and ODE DLLs.

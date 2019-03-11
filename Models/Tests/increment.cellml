@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:06:13 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="increment" cmeta:id="increment" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <component name="main">
+      <variable name="t" units="second"/>
+      <variable name="a" units="dimensionless" initial_value="3"/>
+      <variable name="i" units="dimensionless"/>
+      <variable name="s_s" units="second" initial_value="0"/>
+      <variable name="s_p" units="second" initial_value="0.1"/>
+      <variable name="dummy" units="dimensionless" initial_value="0"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>t</ci>
+               </bvar>
+               <ci>dummy</ci>
+            </apply>
+            <cn cellml:units="dimensionless">0</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>i</ci>
+            <apply>
+               <plus/>
+               <ci>a</ci>
+               <apply>
+                  <times/>
+                  <apply>
+                     <floor/>
+                     <apply>
+                        <divide/>
+                        <apply>
+                           <minus/>
+                           <ci>t</ci>
+                           <ci>s_s</ci>
+                        </apply>
+                        <ci>s_p</ci>
+                     </apply>
+                  </apply>
+                  <ci>s_p</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+</model>

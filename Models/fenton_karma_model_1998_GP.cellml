@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:08:00 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="fenton_karma_model_1998_GP" cmeta:id="fenton_karma_model_1998_GP" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <units name="ms">
+      <unit units="second" prefix="milli"/>
+   </units>
+   <units name="per_ms">
+      <unit units="second" prefix="milli" exponent="-1"/>
+   </units>
+   <units name="mV">
+      <unit units="volt" prefix="milli"/>
+   </units>
+   <units name="per_mV">
+      <unit units="volt" prefix="milli" exponent="-1"/>
+   </units>
+   <units name="per_mV_ms">
+      <unit units="mV" exponent="-1"/>
+      <unit units="ms" exponent="-1"/>
+   </units>
+   <units name="mS_per_cm2">
+      <unit units="siemens" prefix="milli"/>
+      <unit units="metre" prefix="centi" exponent="-2"/>
+   </units>
+   <units name="uF_per_cm2">
+      <unit units="farad" prefix="micro"/>
+      <unit units="metre" prefix="centi" exponent="-2"/>
+   </units>
+   <units name="uA_per_cm2">
+      <unit units="ampere" prefix="micro"/>
+      <unit units="metre" prefix="centi" exponent="-2"/>
+   </units>
+   <units name="concentration_units">
+      <unit units="mole" prefix="nano"/>
+      <unit units="metre" prefix="milli" exponent="-3"/>
+   </units>
+   <component name="environment">
+      <variable name="time" units="ms" public_interface="out"/>
+   </component>
+   <component name="membrane">
+      <variable name="u" units="dimensionless" initial_value="0" public_interface="out"/>
+      <variable name="Cm" units="uF_per_cm2" initial_value="1" public_interface="out"/>
+      <variable name="Vm" units="mV"/>
+      <variable name="V_0" units="mV" initial_value="-85"/>
+      <variable name="V_fi" units="mV" initial_value="15"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <variable name="J_fi" units="per_ms" public_interface="in"/>
+      <variable name="J_so" units="per_ms" public_interface="in"/>
+      <variable name="J_si" units="per_ms" public_interface="in"/>
+      <variable name="J_stim" units="per_ms"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>J_stim</ci>
+            <piecewise>
+               <piece>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="per_ms">0.2</cn>
+                  </apply>
+                  <apply>
+                     <and/>
+                     <apply>
+                        <geq/>
+                        <ci>time</ci>
+                        <cn cellml:units="ms">100</cn>
+                     </apply>
+                     <apply>
+                        <leq/>
+                        <ci>time</ci>
+                        <cn cellml:units="ms">101</cn>
+                     </apply>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="per_ms">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>u</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <apply>
+                  <plus/>
+                  <ci>J_fi</ci>
+                  <ci>J_so</ci>
+                  <ci>J_si</ci>
+                  <ci>J_stim</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Vm</ci>
+            <apply>
+               <plus/>
+               <ci>V_0</ci>
+               <apply>
+                  <times/>
+                  <ci>u</ci>
+                  <apply>
+                     <minus/>
+                     <ci>V_fi</ci>
+                     <ci>V_0</ci>
+                  </apply>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="p">
+      <variable name="p" units="dimensionless" public_interface="out"/>
+      <variable name="u_c" units="dimensionless" initial_value="0.13" public_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>p</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0</cn>
+                  <apply>
+                     <lt/>
+                     <ci>u</ci>
+                     <ci>u_c</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+      </math>
+   </component>
+   <component name="q">
+      <variable name="q" units="dimensionless" public_interface="out"/>
+      <variable name="u_v" units="dimensionless" initial_value="0.025"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>q</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">0</cn>
+                  <apply>
+                     <lt/>
+                     <ci>u</ci>
+                     <ci>u_v</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">1</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+      </math>
+   </component>
+   <component name="fast_inward_current">
+      <variable name="J_fi" units="per_ms" public_interface="out"/>
+      <variable name="tau_d" units="ms"/>
+      <variable name="g_fi_max" units="mS_per_cm2" initial_value="8.7"/>
+      <variable name="Cm" units="uF_per_cm2" public_interface="in"/>
+      <variable name="p" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="q" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="u_c" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in" private_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="v" units="dimensionless" private_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>tau_d</ci>
+            <apply>
+               <divide/>
+               <ci>Cm</ci>
+               <ci>g_fi_max</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>J_fi</ci>
+            <apply>
+               <divide/>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <ci>v</ci>
+                  </apply>
+                  <ci>p</ci>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <ci>u</ci>
+                  </apply>
+                  <apply>
+                     <minus/>
+                     <ci>u</ci>
+                     <ci>u_c</ci>
+                  </apply>
+               </apply>
+               <ci>tau_d</ci>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="fast_inward_current_v_gate">
+      <variable name="v" units="dimensionless" initial_value="1" public_interface="out"/>
+      <variable name="tau_v_minus" units="ms"/>
+      <variable name="tau_v1_minus" units="ms" initial_value="333"/>
+      <variable name="tau_v2_minus" units="ms" initial_value="40"/>
+      <variable name="tau_v_plus" units="ms" initial_value="10"/>
+      <variable name="q" units="dimensionless" public_interface="in"/>
+      <variable name="p" units="dimensionless" public_interface="in"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>tau_v_minus</ci>
+            <apply>
+               <plus/>
+               <apply>
+                  <times/>
+                  <ci>q</ci>
+                  <ci>tau_v1_minus</ci>
+               </apply>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <ci>q</ci>
+                  </apply>
+                  <ci>tau_v2_minus</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>v</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>p</ci>
+                     </apply>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>v</ci>
+                     </apply>
+                  </apply>
+                  <ci>tau_v_minus</ci>
+               </apply>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <ci>p</ci>
+                     <ci>v</ci>
+                  </apply>
+                  <ci>tau_v_plus</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="slow_outward_current">
+      <variable name="J_so" units="per_ms" public_interface="out"/>
+      <variable name="tau_0" units="ms" initial_value="12.5"/>
+      <variable name="tau_r" units="ms" initial_value="25"/>
+      <variable name="p" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>J_so</ci>
+            <apply>
+               <plus/>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <ci>u</ci>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>p</ci>
+                     </apply>
+                  </apply>
+                  <ci>tau_0</ci>
+               </apply>
+               <apply>
+                  <divide/>
+                  <ci>p</ci>
+                  <ci>tau_r</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="slow_inward_current">
+      <variable name="J_si" units="per_ms" public_interface="out"/>
+      <variable name="tau_si" units="ms" initial_value="22.22"/>
+      <variable name="u_csi" units="dimensionless" initial_value="0.85"/>
+      <variable name="k" units="dimensionless" initial_value="10"/>
+      <variable name="p" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="time" units="ms" public_interface="in" private_interface="out"/>
+      <variable name="u" units="dimensionless" public_interface="in" private_interface="out"/>
+      <variable name="w" units="dimensionless" private_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>J_si</ci>
+            <apply>
+               <divide/>
+               <apply>
+                  <times/>
+                  <apply>
+                     <minus/>
+                     <ci>w</ci>
+                  </apply>
+                  <apply>
+                     <plus/>
+                     <cn cellml:units="dimensionless">1</cn>
+                     <apply>
+                        <tanh/>
+                        <apply>
+                           <times/>
+                           <ci>k</ci>
+                           <apply>
+                              <minus/>
+                              <ci>u</ci>
+                              <ci>u_csi</ci>
+                           </apply>
+                        </apply>
+                     </apply>
+                  </apply>
+               </apply>
+               <apply>
+                  <times/>
+                  <cn cellml:units="dimensionless">2</cn>
+                  <ci>tau_si</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="slow_inward_current_w_gate">
+      <variable name="w" units="dimensionless" initial_value="1" public_interface="out"/>
+      <variable name="tau_w_minus" units="ms" initial_value="65"/>
+      <variable name="tau_w_plus" units="ms" initial_value="1000"/>
+      <variable name="p" units="dimensionless" public_interface="in"/>
+      <variable name="u" units="dimensionless" public_interface="in"/>
+      <variable name="time" units="ms" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>w</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>p</ci>
+                     </apply>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <ci>w</ci>
+                     </apply>
+                  </apply>
+                  <ci>tau_w_minus</ci>
+               </apply>
+               <apply>
+                  <divide/>
+                  <apply>
+                     <times/>
+                     <ci>p</ci>
+                     <ci>w</ci>
+                  </apply>
+                  <ci>tau_w_plus</ci>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <group>
+      <relationship_ref relationship="containment"/>
+      <component_ref component="membrane">
+         <component_ref component="fast_inward_current">
+            <component_ref component="fast_inward_current_v_gate"/>
+         </component_ref>
+         <component_ref component="slow_outward_current"/>
+         <component_ref component="slow_inward_current">
+            <component_ref component="slow_inward_current_w_gate"/>
+         </component_ref>
+         <component_ref component="p"/>
+         <component_ref component="q"/>
+      </component_ref>
+   </group>
+   <group>
+      <relationship_ref relationship="encapsulation"/>
+      <component_ref component="fast_inward_current">
+         <component_ref component="fast_inward_current_v_gate"/>
+      </component_ref>
+      <component_ref component="slow_inward_current">
+         <component_ref component="slow_inward_current_w_gate"/>
+      </component_ref>
+   </group>
+   <connection>
+      <map_components component_1="membrane" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="q" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="fast_inward_current" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="slow_outward_current" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="slow_inward_current" component_2="environment"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="fast_inward_current"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="J_fi" variable_2="J_fi"/>
+      <map_variables variable_1="Cm" variable_2="Cm"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="slow_outward_current"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="J_so" variable_2="J_so"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="slow_inward_current"/>
+      <map_variables variable_1="u" variable_2="u"/>
+      <map_variables variable_1="J_si" variable_2="J_si"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="p"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="membrane" component_2="q"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="fast_inward_current"/>
+      <map_variables variable_1="p" variable_2="p"/>
+      <map_variables variable_1="u_c" variable_2="u_c"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="slow_outward_current"/>
+      <map_variables variable_1="p" variable_2="p"/>
+   </connection>
+   <connection>
+      <map_components component_1="p" component_2="slow_inward_current"/>
+      <map_variables variable_1="p" variable_2="p"/>
+   </connection>
+   <connection>
+      <map_components component_1="q" component_2="fast_inward_current"/>
+      <map_variables variable_1="q" variable_2="q"/>
+   </connection>
+   <connection>
+      <map_components component_1="fast_inward_current" component_2="fast_inward_current_v_gate"/>
+      <map_variables variable_1="v" variable_2="v"/>
+      <map_variables variable_1="p" variable_2="p"/>
+      <map_variables variable_1="q" variable_2="q"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+   <connection>
+      <map_components component_1="slow_inward_current" component_2="slow_inward_current_w_gate"/>
+      <map_variables variable_1="w" variable_2="w"/>
+      <map_variables variable_1="p" variable_2="p"/>
+      <map_variables variable_1="time" variable_2="time"/>
+      <map_variables variable_1="u" variable_2="u"/>
+   </connection>
+</model>

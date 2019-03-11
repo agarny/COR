@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:08:04 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="fitzhugh_nagumo_model_1961" cmeta:id="fitzhugh_nagumo_model_1961" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <units name="millisecond">
+      <unit units="second" prefix="milli"/>
+   </units>
+   <units name="per_millisecond">
+      <unit units="second" prefix="milli" exponent="-1"/>
+   </units>
+   <component name="Main">
+      <variable name="t" units="millisecond"/>
+      <variable name="v" units="dimensionless" initial_value="0"/>
+      <variable name="w" units="dimensionless" initial_value="0"/>
+      <variable name="alpha" units="dimensionless" initial_value="-0.08"/>
+      <variable name="gamma" units="dimensionless" initial_value="3"/>
+      <variable name="epsilon" units="dimensionless" initial_value="0.005"/>
+      <variable name="I" units="dimensionless"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <ci>I</ci>
+            <piecewise>
+               <piece>
+                  <apply>
+                     <minus/>
+                     <cn cellml:units="dimensionless">80</cn>
+                  </apply>
+                  <apply>
+                     <and/>
+                     <apply>
+                        <geq/>
+                        <ci>t</ci>
+                        <cn cellml:units="millisecond">0</cn>
+                     </apply>
+                     <apply>
+                        <leq/>
+                        <ci>t</ci>
+                        <cn cellml:units="millisecond">0.5</cn>
+                     </apply>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>t</ci>
+               </bvar>
+               <ci>v</ci>
+            </apply>
+            <apply>
+               <times/>
+               <cn cellml:units="per_millisecond">1</cn>
+               <apply>
+                  <plus/>
+                  <apply>
+                     <minus/>
+                     <apply>
+                        <times/>
+                        <ci>v</ci>
+                        <apply>
+                           <minus/>
+                           <ci>v</ci>
+                           <ci>alpha</ci>
+                        </apply>
+                        <apply>
+                           <minus/>
+                           <cn cellml:units="dimensionless">1</cn>
+                           <ci>v</ci>
+                        </apply>
+                     </apply>
+                     <ci>w</ci>
+                  </apply>
+                  <ci>I</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>t</ci>
+               </bvar>
+               <ci>w</ci>
+            </apply>
+            <apply>
+               <times/>
+               <cn cellml:units="per_millisecond">1</cn>
+               <ci>epsilon</ci>
+               <apply>
+                  <minus/>
+                  <ci>v</ci>
+                  <apply>
+                     <times/>
+                     <ci>gamma</ci>
+                     <ci>w</ci>
+                  </apply>
+               </apply>
+            </apply>
+         </apply>
+      </math>
+   </component>
+</model>

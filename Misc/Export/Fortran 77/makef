@@ -1,0 +1,5 @@
+#/bin/sh
+
+f77 -o mainf main.f test.f
+
+\rm *.o

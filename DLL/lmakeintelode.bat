@@ -1,0 +1,1 @@
+@CMD /C makeintelode.bat

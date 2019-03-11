@@ -1,0 +1,12 @@
+Copyright (C) 2002-2010 Oxford Cardiac Electrophysiology Group, Department of Physiology, Anatomy & Genetics, University of Oxford (http://cor.physiol.ox.ac.uk/)
+
+This software is provided "as is" with no warranty of any kind, explicit or implicit.
+
+Permission is granted subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented. You must not claim that you wrote the original software.
+2. Any publication that results of the use of this software must be acknowledged using the following reference:
+   - Garny A, Noble D, Hunter PJ & Kohl P. Cellular Open Resource (COR): current status and future directions. Phil Trans R Soc A 367: 1885-1906 (2009).
+   - Garny A, Kohl P & Noble D (2003) Cellular Open Resource (COR): a public CellML based environment for modelling biological function. Int J Bifurcation and Chaos 13/12: 3579-3590 (2003).
+
+This notice may not be removed or altered from any distribution.

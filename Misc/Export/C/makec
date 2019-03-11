@@ -1,0 +1,5 @@
+#/bin/sh
+
+cc -o mainc main.c test.c -lm
+
+\rm *.o

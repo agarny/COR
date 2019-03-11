@@ -1,0 +1,756 @@
+﻿<COR>
+   <Version Value="0.9.31.1409">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Improved: CellML validator."/>
+      <Description Value="Improved: Delphi for Win32 and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1393">
+      <Description Value="Fixed/improved: CellML API."/>
+      <Description Value="Fixed: C, C++, Fortran 77 and Java export of a CellML file."/>
+      <Description Value="Improved: command viewer."/>
+   </Version>
+   <Version Value="0.9.31.1379">
+      <Description Value="Fixed: CellML API."/>
+      <Description Value="Updated: third party components."/>
+   </Version>
+   <Version Value="0.9.31.1371">
+      <Description Value="Improved: GUI."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1351">
+      <Description Value="Added: Microsoft Word 2010 export of a CellML file."/>
+      <Description Value="Updated: third party components."/>
+   </Version>
+   <Version Value="0.9.31.1333">
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.1325">
+      <Description Value="Fixed/improved: CellML editor."/>
+   </Version>
+   <Version Value="0.9.31.1319">
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Updated: third party components."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1309">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.1305">
+      <Description Value="Improved: CellML API and parser."/>
+   </Version>
+   <Version Value="0.9.31.1297">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.1295">
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: third party components."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1279">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.1273">
+      <Description Value="Updated: CVODE ODE integrator."/>
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1255">
+      <Description Value="Improved/updated: GUI."/>
+      <Description Value="Improved: graph plotter."/>
+      <Description Value="Updated: third party components."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1207">
+      <Description Value="Fixed: CellML API."/>
+   </Version>
+   <Version Value="0.9.31.1201">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.1199">
+      <Description Value="Improved: TeX export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1197">
+      <Description Value="Improved: GUI."/>
+      <Description Value="Improved: CSV export of graphs."/>
+   </Version>
+   <Version Value="0.9.31.1193">
+      <Description Value="Improved: GUI."/>
+      <Description Value="Improved: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.1189">
+      <Description Value="Improved/updated: GUI."/>
+      <Description Value="Improved: CellML validator."/>
+      <Description Value="Improved: Delphi for Win32, Fortran 77 and Pascal export of a CellML file."/>
+      <Description Value="Updated: third party components."/>
+   </Version>
+   <Version Value="0.9.31.1175">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.1165">
+      <Description Value="Improved: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.1155">
+      <Description Value="Improved/updated: GUI."/>
+      <Description Value="Improved: graph plotter."/>
+      <Description Value="Improved: CSV export of graphs."/>
+      <Description Value="Improved: C, C++, Delphi for Win32, Fortran 77, Java, MATLAB and Pascal export of a CellML file."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1125">
+      <Description Value="Fixed/improved: C, C++, Delphi for Win32, Fortran 77, Java, MATLAB, Microsoft Word 2007, Pascal and TeX export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1119">
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1115">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.1111">
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Updated: third party components."/>
+   </Version>
+   <Version Value="0.9.31.1073">
+      <Description Value="Added: Microsoft Word 2007 export of a CellML file."/>
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Fixed/improved: TeX export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1055">
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Updated: third party components."/>
+   </Version>
+   <Version Value="0.9.31.1033">
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.1031">
+      <Description Value="Fixed: C, C++, Delphi for Win32, Fortran 77, Java and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1027">
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Updated: third party components."/>
+   </Version>
+   <Version Value="0.9.31.1015">
+      <Description Value="Fixed: CellML API."/>
+      <Description Value="Improved: CellML API and parser."/>
+      <Description Value="Improved: generation of machine code from a CellML file."/>
+      <Description Value="Improved: C, C++, Delphi for Win32, Fortran 77, Java and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1007">
+      <Description Value="Fixed: CellML API and parser."/>
+      <Description Value="Fixed: C, C++, Delphi for Win32, Fortran 77, Java, MATLAB and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1001">
+      <Description Value="Added: debug feature in computational mode."/>
+      <Description Value="Fixed/improved: generation of machine code from a CellML file."/>
+      <Description Value="Fixed: C, C++, Delphi for Win32, Fortran 77, Java, MATLAB and Pascal export of a CellML file."/>
+      <Description Value="Fixed: CellML editor."/>
+   </Version>
+   <Version Value="0.9.31.995">
+      <Description Value="Improved: GUI."/>
+      <Description Value="Improved: C, C++, Delphi for Win32, Fortran 77, Java, MATLAB and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.985">
+      <Description Value="Fixed/improved: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.981">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.979">
+      <Description Value="Fixed: CellML API."/>
+   </Version>
+   <Version Value="0.9.31.977">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.959">
+      <Description Value="Improved: support for metadata."/>
+   </Version>
+   <Version Value="0.9.31.955">
+      <Description Value="Added: support for metadata."/>
+      <Description Value="Improved: GUI."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.947">
+      <Description Value="Improved: generation of machine code from a CellML file."/>
+      <Description Value="Improved: C, C++, Delphi for Win32, Fortran 77, Java and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.927">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.923">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Improved: MATLAB export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.915">
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Improved: MATLAB export of a CellML file."/>
+      <Description Value="Improved: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.901">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.897">
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Improved: computational speed."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.873">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.867">
+      <Description Value="Improved: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.863">
+      <Description Value="Added: 'Save'/'Save as...' feature to the computational mode."/>
+      <Description Value="Fixed/improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.833">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.821">
+      <Description Value="Fixed/improved: CellML validator."/>
+      <Description Value="Fixed: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.813">
+      <Description Value="Fixed: generation of machine code from a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.811">
+      <Description Value="Improved: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.807">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.801">
+      <Description Value="Fixed/improved: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.797">
+      <Description Value="Updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.789">
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Fixed: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.769">
+      <Description Value="Fixed: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.759">
+      <Description Value="Fixed: generation of machine code from a CellML file."/>
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.755">
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Improved: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.679">
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.649">
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Improved: ODE integrators."/>
+   </Version>
+   <Version Value="0.9.31.639">
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.633">
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.623">
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.569">
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Improved: ODE integrators."/>
+   </Version>
+   <Version Value="0.9.31.489">
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.471">
+      <Description Value="Fixed: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.469">
+      <Description Value="Fixed/improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.443">
+      <Description Value="Fixed: optimised mathematical functions."/>
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.441">
+      <Description Value="Fixed/improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.419">
+      <Description Value="Updated: GUI."/>
+      <Description Value="Improved: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.415">
+      <Description Value="Fixed/improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.397">
+      <Description Value="Fixed/updated: GUI."/>
+      <Description Value="Fixed: CellML validator."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Updated: CVODE ODE integrator."/>
+   </Version>
+   <Version Value="0.9.31.389">
+      <Description Value="Fixed: CellML validator."/>
+   </Version>
+   <Version Value="0.9.31.387">
+      <Description Value="Fixed: CellML validator."/>
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.379">
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Improved: CVODE ODE integrator."/>
+   </Version>
+   <Version Value="0.9.31.365">
+      <Description Value="Fixed/improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.349">
+      <Description Value="Added: show/hide specific cellular properties when in computational mode."/>
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.341">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Improved: generation of machine code from a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.337">
+      <Description Value="IMPORTANT NOTICE: in compliance with the recent CellML MIME type document, COR now uses the '.cellml' extension for CellML files rather than '.cml'. While we were at it, we also decided to replace the '.cor' extension for COR projects with '.corproj', even though the concept of COR project has yet to be implemented in COR. You can find a utility on the COR website that can rename the extension of all your files for you, as well as update the registry with the new extensions. Just go to the FAQ section of the website (http://cor.physiol.ox.ac.uk/FAQ/)"/>
+      <Description Value="Updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.333">
+      <Description Value="Fixed: generation of machine code from a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.331">
+      <Description Value="Fixed/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.327">
+      <Description Value="Fixed: command viewer."/>
+      <Description Value="Fixed: TeX export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.325">
+      <Description Value="Fixed: CellML editor."/>
+      <Description Value="Fixed/updated: GUI."/>
+      <Description Value="Improved/updated: CVODE ODE integrator."/>
+      <Description Value="Improved: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.321">
+      <Description Value="Fixed/updated: GUI."/>
+      <Description Value="Improved: ODE integrators."/>
+   </Version>
+   <Version Value="0.9.31.309">
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.297">
+      <Description Value="Fixed: generation of machine code from a CellML file."/>
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.281">
+      <Description Value="Improved/fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.263">
+      <Description Value="Fixed: CVODE ODE integrator."/>
+      <Description Value="Updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.261">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.259">
+      <Description Value="Improved/updated: CVODE ODE integrator."/>
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.253">
+      <Description Value="Improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.251">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Improved: fixed time-step ODE integrators."/>
+   </Version>
+   <Version Value="0.9.31.247">
+      <Description Value="Improved: ODE integrators."/>
+      <Description Value="Updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.241">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.239">
+      <Description Value="Fixed: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.237">
+      <Description Value="Fixed/updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.229">
+      <Description Value="Fixed: OpenGL side of COR."/>
+   </Version>
+   <Version Value="0.9.31.227">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.223">
+      <Description Value="Improved/updated: GUI."/>
+      <Description Value="Improved: fixed time-step ODE integrators."/>
+   </Version>
+   <Version Value="0.9.31.217">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.211">
+      <Description Value="Fixed: graph plotter."/>
+      <Description Value="Improved/updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.201">
+      <Description Value="Fixed/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.199">
+      <Description Value="Fixed: OpenGL side of COR."/>
+   </Version>
+   <Version Value="0.9.31.197">
+      <Description Value="Improved: OpenGL side of COR."/>
+   </Version>
+   <Version Value="0.9.31.195">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Fixed/updated: OpenGL side of COR."/>
+   </Version>
+   <Version Value="0.9.31.187">
+      <Description Value="Improved: CVODE ODE integrator."/>
+      <Description Value="Improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.183">
+      <Description Value="Fixed/updated: GUI."/>
+      <Description Value="updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.179">
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.175">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.171">
+      <Description Value="Improved: GUI."/>
+      <Description Value="Improved: CVODE ODE integrator."/>
+   </Version>
+   <Version Value="0.9.31.167">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.163">
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.153">
+      <Description Value="Fixed: CellML parser."/>
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.149">
+      <Description Value="Fixed: CellML writer."/>
+      <Description Value="Fixed: CellML editor."/>
+      <Description Value="Fixed/improved: graph plotter."/>
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Added: CSV export of graphs."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.137">
+      <Description Value="Fixed/improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.133">
+      <Description Value="Fixed/improved: GUI."/>
+      <Description Value="Improved: command viewer."/>
+      <Description Value="Added: TeX export of a CellML file."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.129">
+      <Description Value="Fixed: CellML parser."/>
+      <Description Value="Improved: OpenGL side of COR."/>
+      <Description Value="Updated: memory manager."/>
+   </Version>
+   <Version Value="0.9.31.127">
+      <Description Value="Fixed: CellML editor."/>
+   </Version>
+   <Version Value="0.9.31.125">
+      <Description Value="Fixed/improved: OpenGL side of COR."/>
+      <Description Value="Fixed/improved/updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.99">
+      <Description Value="Fixed: CellML parser."/>
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.31.97">
+      <Description Value="Fixed/updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Updated: support for data compression."/>
+   </Version>
+   <Version Value="0.9.31.83">
+      <Description Value="Fixed: CellML parser."/>
+   </Version>
+   <Version Value="0.9.31.81">
+      <Description Value="Improved: CVODE ODE integrator."/>
+      <Description Value="Removed: LSODA ODE integrator."/>
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: options form."/>
+      <Description Value="Updated: single cell parameters box."/>
+   </Version>
+   <Version Value="0.9.31.79">
+      <Description Value="Added: LSODA and CVODE ODE integrator."/>
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: memory manager."/>
+      <Description Value="Updated: options form."/>
+      <Description Value="Updated: single cell parameters box."/>
+   </Version>
+   <Version Value="0.9.31.77">
+      <Description Value="Fixed: OpenGL side of COR."/>
+   </Version>
+   <Version Value="0.9.31.75">
+      <Description Value="Added: better memory manager."/>
+      <Description Value="Added: graphical rendering of a unit declaration and variable declaration."/>
+      <Description Value="Updated: GUI."/>
+   </Version>
+   <Version Value="0.9.31.73">
+      <Description Value="Fixed: CellML editor."/>
+   </Version>
+   <Version Value="0.9.31.71">
+      <Description Value="Fixed/improved: C, C++, Delphi for Win32, Fortran 77, Java, MATLAB and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.69">
+      <Description Value="Fixed: CellML writer."/>
+      <Description Value="Fixed: CellML editor."/>
+   </Version>
+   <Version Value="0.9.31.67">
+      <Description Value="Improved: C, C++, Delphi for Win32, Fortran 77, Java, MATLAB and Pascal export of a CellML file."/>
+      <Description Value="Improved: GUI."/>
+      <Description Value="Added: digit grouping of numbers in the command viewer."/>
+   </Version>
+   <Version Value="0.9.31.65">
+      <Description Value="Fixed: CellML validator."/>
+      <Description Value="Fixed/improved: C, C++, Delphi for Win32, Java, MATLAB and Pascal export of a CellML file."/>
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Improved: command viewer."/>
+      <Description Value="Improved: CellML parser."/>
+      <Description Value="Added: Fortran 77 export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.63">
+      <Description Value="Fixed: CellML validator."/>
+      <Description Value="Improved: command viewer."/>
+   </Version>
+   <Version Value="0.9.31.62">
+      <Description Value="Added: reformatting of a COR project or CellML file."/>
+   </Version>
+   <Version Value="0.9.31.61">
+      <Description Value="Fixed/updated: GUI."/>
+      <Description Value="Added: FitzHugh-Nagumo model."/>
+   </Version>
+   <Version Value="0.9.31.59">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Improved: generation of error messages upon running, exporting, etc. a CellML file"/>
+   </Version>
+   <Version Value="0.9.31.58">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Fixed/improved: options form."/>
+      <Description Value="Added: dialog box to allow the user to specify the parameters of a single cell simulation."/>
+   </Version>
+   <Version Value="0.9.31.57">
+      <Description Value="Fixed: generation of machine code from a CellML file."/>
+      <Description Value="Improved: options form."/>
+      <Description Value="Added: forward Euler, 2nd-order Runge-Kutta and 4th-order Runge Kutta ODE integrators."/>
+   </Version>
+   <Version Value="0.9.31.55">
+      <Description Value="Fixed: command viewer."/>
+      <Description Value="Fixed/improved: COR/CellML API and editor."/>
+      <Description Value="Fixed/improved/updated: GUI."/>
+      <Description Value="Improved: GUI."/>
+      <Description Value="Improved: C, C++, Delphi for Win32, Java, MATLAB and Pascal export of a CellML file."/>
+      <Description Value="Improved: computational speed."/>
+      <Description Value="Added: optimised mathematical functions."/>
+      <Description Value="Added: generation of machine code from a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.43">
+      <Description Value="Fixed: memory leaks."/>
+      <Description Value="Updated: GUI."/>
+      <Description Value="Updated: third party components."/>
+      <Description Value="Added: memory leaks check."/>
+   </Version>
+   <Version Value="0.9.31.39">
+      <Description Value="Fixed/improved: COR/CellML editor."/>
+      <Description Value="Improved: C, C++, Delphi for Win32, Java, MATLAB and Pascal export of a CellML file."/>
+      <Description Value="Improved/updated: GUI."/>
+      <Description Value="Improved/updated: options form."/>
+      <Description Value="Added: splash screen."/>
+      <Description Value="Added: visual progress of a file's compilation."/>
+      <Description Value="Added: detect whether COR is running from VMWare or Virtual PC."/>
+      <Description Value="Updated: third party components."/>
+      <Description Value="Updated: help file."/>
+   </Version>
+   <Version Value="0.9.31.29">
+      <Description Value="Improved: mathematical functions that come with Delphi for Win32."/>
+      <Description Value="Improved: C, C++, Delphi for Win32, Java, MATLAB and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.28">
+      <Description Value="Fixed: CellML API and editor."/>
+   </Version>
+   <Version Value="0.9.31.27">
+      <Description Value="Fixed: CellML editor."/>
+   </Version>
+   <Version Value="0.9.31.25">
+      <Description Value="Added: support for data compression."/>
+   </Version>
+   <Version Value="0.9.31.23">
+      <Description Value="Improved: Delphi for Win32 and Pascal export of a CellML file."/>
+      <Description Value="Added: support compression of the executable via UPX."/>
+   </Version>
+   <Version Value="0.9.31.21">
+      <Description Value="Fixed: CellML-related problem."/>
+      <Description Value="Improved: design of the CellML export feature."/>
+      <Description Value="Added: Delphi for Win32 and Pascal export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.19">
+      <Description Value="Improved: Java export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.18">
+      <Description Value="Fixed: Java export of a CellML file."/>
+      <Description Value="Improved: C, C++, Java and MATLAB export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.17">
+      <Description Value="Fixed: C, C++, Java and MATLAB export of a CellML file."/>
+      <Description Value="Improved: Java export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.16">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.31.15">
+      <Description Value="Improved: C and C++ export of a CellML file."/>
+      <Description Value="Improved: CellML API."/>
+   </Version>
+   <Version Value="0.9.31.13">
+      <Description Value="Improved: C, C++, Java and MATLAB export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.31.1">
+      <Description Value="Fixed: Java export of a CellML file."/>
+      <Description Value="Improved: OpenGL side of COR."/>
+      <Description Value="Added: ability to run a CellML file from within the GUI, as opposed to through a COR project."/>
+   </Version>
+   <Version Value="0.9.30.19">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.30.7">
+      <Description Value="Fixed: C and C++ export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.30.5">
+      <Description Value="Fixed: Java export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.30.3">
+      <Description Value="Fixed: refreshing of the update window."/>
+   </Version>
+   <Version Value="0.9.30.1">
+      <Description Value="Improved: CellML API and editor."/>
+      <Description Value="Added: C, C++, Java and MATLAB export of a CellML file."/>
+   </Version>
+   <Version Value="0.9.29.81">
+      <Description Value="Added: links to the CellML website and repository."/>
+   </Version>
+   <Version Value="0.9.29.77">
+      <Description Value="Fixed: auto update feature."/>
+      <Description Value="Fixed: generation of the graphical version of all the equations of a model."/>
+      <Description Value="Improved: command viewer."/>
+      <Description Value="Improved: CellML editor."/>
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.29.73">
+      <Description Value="Fixed: graph plotter."/>
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.29.51">
+      <Description Value="Improved: mesh renderer."/>
+   </Version>
+   <Version Value="0.9.29.50">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.29.49">
+      <Description Value="Improved: mesh renderer."/>
+   </Version>
+   <Version Value="0.9.29.48">
+      <Description Value="Improved: graph plotter."/>
+   </Version>
+   <Version Value="0.9.29.46">
+      <Description Value="Added: GUI."/>
+   </Version>
+   <Version Value="0.9.29.45">
+      <Description Value="Improved: OpenGL side of COR."/>
+   </Version>
+   <Version Value="0.9.29.44">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.29.43">
+      <Description Value="Improved: computational speed."/>
+   </Version>
+   <Version Value="0.9.29.41">
+      <Description Value="Added: GUI."/>
+   </Version>
+   <Version Value="0.9.29.40">
+      <Description Value="Improved: command viewer."/>
+   </Version>
+   <Version Value="0.9.29.39">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.29.38">
+      <Description Value="Added: different ways of formatting an equation in the command viewer."/>
+   </Version>
+   <Version Value="0.9.29.37">
+      <Description Value="Fixed: command viewer."/>
+      <Description Value="Fixed: implementation of CellML rules."/>
+      <Description Value="Added: ability to use underscores for subscripts in the command viewer."/>
+      <Description Value="Added: ability to replace symbols by their Greek equivalent in the command viewer."/>
+   </Version>
+   <Version Value="0.9.29.35">
+      <Description Value="Fixed: implementation of CellML rules."/>
+      <Description Value="Fixed: command viewer."/>
+      <Description Value="Fixed: COR/CellML editor."/>
+      <Description Value="Fixed: CellML editor."/>
+   </Version>
+   <Version Value="0.9.29.29">
+      <Description Value="Fixed: OpenGL side of COR."/>
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.29.25">
+      <Description Value="Added: crash handling."/>
+   </Version>
+   <Version Value="0.9.29.21">
+      <Description Value="Added: ability to update COR via a proxy server using either a Basic or NTLM authentication method."/>
+   </Version>
+   <Version Value="0.9.29.18">
+      <Description Value="Fixed: conversion of a CellML file into CellML objects."/>
+   </Version>
+   <Version Value="0.9.29.17">
+      <Description Value="Fixed: auto update from behind a proxy server that requires authentication."/>
+   </Version>
+   <Version Value="0.9.29.15">
+      <Description Value="Fixed: mesh renderer."/>
+   </Version>
+   <Version Value="0.9.29.14">
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.29.13">
+      <Description Value="Fixed: auto update feature from behind a proxy server."/>
+   </Version>
+   <Version Value="0.9.29.12">
+      <Description Value="Added: way to encrypt/decrypt strings."/>
+   </Version>
+   <Version Value="0.9.29.11">
+      <Description Value="Fixed: command viewer."/>
+   </Version>
+   <Version Value="0.9.29.10">
+      <Description Value="Improved: GUI."/>
+   </Version>
+   <Version Value="0.9.29.9">
+      <Description Value="Fixed: auto update feature."/>
+      <Description Value="Fixed: GUI."/>
+   </Version>
+   <Version Value="0.9.29.7">
+      <Description Value="Fixed: GUI."/>
+      <Description Value="Improved: XML side of COR."/>
+      <Description Value="Improved: auto update feature."/>
+   </Version>
+</COR>

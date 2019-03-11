@@ -1,0 +1,54 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{c100222f-2e42-4a81-8c6a-34d51754261a}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="COR.dproj" />
+    <Projects Include="Tests.dproj" />
+    <Projects Include="VCLs.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="VCLs">
+    <MSBuild Projects="VCLs.dproj" Targets="" />
+  </Target>
+  <Target Name="VCLs:Clean">
+    <MSBuild Projects="VCLs.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="VCLs:Make">
+    <MSBuild Projects="VCLs.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Tests">
+    <MSBuild Projects="Tests.dproj" Targets="" />
+  </Target>
+  <Target Name="Tests:Clean">
+    <MSBuild Projects="Tests.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Tests:Make">
+    <MSBuild Projects="Tests.dproj" Targets="Make" />
+  </Target>
+  <Target Name="COR">
+    <MSBuild Projects="COR.dproj" Targets="" />
+  </Target>
+  <Target Name="COR:Clean">
+    <MSBuild Projects="COR.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="COR:Make">
+    <MSBuild Projects="COR.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="VCLs;Tests;COR" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="VCLs:Clean;Tests:Clean;COR:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="VCLs:Make;Tests:Make;COR:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

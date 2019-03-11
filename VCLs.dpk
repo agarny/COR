@@ -1,0 +1,73 @@
+//==============================================================================
+// VCLs package
+//
+// by Alan Garny
+//    alan.garny@dpag.ox.ac.uk
+//    http://COR.physiol.ox.ac.uk/
+//
+// © Copyright 2002-2009
+//------------------------------------------------------------------------------
+// Date of Creation: 27/04/2002
+//
+// Modifications: (model: [<initials>, dd/mm/yy] <what has been done>)
+//==============================================================================
+// JCL_DEBUG_EXPERT_INSERTJDBG OFF
+//==============================================================================
+
+Package VCLs;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  designide,
+  rtl,
+  vcl,
+  dbrtl,
+  IndySystem,
+  vcljpg;
+
+contains
+  JclDebugIdeImpl in 'Src\Extra\JCL\Experts\Debug\Converter\JclDebugIdeImpl.pas',
+  JvLinkLabel in 'Src\Extra\JVCL\Run\JvLinkLabel.pas',
+  JvValidateEdit in 'Src\Extra\JVCL\Run\JvValidateEdit.pas',
+  SynEditPropertyReg in 'Src\Extra\SynEdit\Source\SynEditPropertyReg.pas',
+  SynEditReg in 'Src\Extra\SynEdit\Source\SynEditReg.pas',
+  SynHighlighterCellML in 'Src\Extra\SynEdit\SynGen\SynHighlighterCellML.pas',
+  VirtualTreesReg in 'Src\Extra\Virtual Treeview\Design\VirtualTreesReg.pas',
+  CmdGraph in 'Src\VCL\CmdGraph.pas',
+  OGL in 'Src\VCL\OGL.pas',
+  OGLGraphPanel in 'Src\VCL\OGLGraphPanel.pas',
+  RippledBitmap in 'Src\VCL\RippledBitmap.pas',
+  SyntaxEdit in 'Src\VCL\SyntaxEdit.pas',
+  VSTListBox in 'Src\VCL\VSTListBox.pas';
+
+//==============================================================================
+
+End.
+
+//==============================================================================
+// End of file
+//==============================================================================
+

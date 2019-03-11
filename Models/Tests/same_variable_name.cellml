@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:06:19 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="same_variable_name" cmeta:id="my_model" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <units name="per_second">
+      <unit units="second" exponent="-1"/>
+   </units>
+   <component name="main">
+      <variable name="time" units="second" public_interface="out"/>
+   </component>
+   <component name="comp_1">
+      <variable name="time" units="second" public_interface="in"/>
+      <variable name="x" units="dimensionless" initial_value="-2" public_interface="out"/>
+      <variable name="y" units="dimensionless" public_interface="in"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>x</ci>
+            </apply>
+            <apply>
+               <times/>
+               <ci>y</ci>
+               <cn cellml:units="per_second">1</cn>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <component name="comp_2">
+      <variable name="time" units="second" public_interface="in"/>
+      <variable name="x" units="dimensionless" initial_value="0" public_interface="out"/>
+      <variable name="y" units="dimensionless" public_interface="in"/>
+      <variable name="c" units="dimensionless" initial_value="1"/>
+      <variable name="C" units="dimensionless" initial_value="1"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>x</ci>
+            </apply>
+            <apply>
+               <times/>
+               <apply>
+                  <minus/>
+                  <apply>
+                     <times/>
+                     <ci>c</ci>
+                     <apply>
+                        <minus/>
+                        <ci>C</ci>
+                        <apply>
+                           <power/>
+                           <ci>y</ci>
+                           <cn cellml:units="dimensionless">2</cn>
+                        </apply>
+                     </apply>
+                     <ci>x</ci>
+                  </apply>
+                  <ci>y</ci>
+               </apply>
+               <cn cellml:units="per_second">1</cn>
+            </apply>
+         </apply>
+      </math>
+   </component>
+   <connection>
+      <map_components component_1="main" component_2="comp_1"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="main" component_2="comp_2"/>
+      <map_variables variable_1="time" variable_2="time"/>
+   </connection>
+   <connection>
+      <map_components component_1="comp_1" component_2="comp_2"/>
+      <map_variables variable_1="x" variable_2="y"/>
+      <map_variables variable_1="y" variable_2="x"/>
+   </connection>
+</model>

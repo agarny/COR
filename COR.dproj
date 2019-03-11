@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{84ca921d-251e-4595-8a29-c38dca767672}</ProjectGuid>
+    <MainSource>COR.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>COR.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_DcuOutput>Temp</DCC_DcuOutput>
+    <DCC_ObjOutput>Temp</DCC_ObjOutput>
+    <DCC_HppOutput>Temp</DCC_HppOutput>
+    <DCC_BplOutput>Temp</DCC_BplOutput>
+    <DCC_DcpOutput>Temp</DCC_DcpOutput>
+    <DCC_UnitSearchPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_UnitSearchPath>
+    <DCC_ResourcePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_ResourcePath>
+    <DCC_ObjPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_ObjPath>
+    <DCC_IncludePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_IncludePath>
+    <DCC_Define>COR_RELEASE;COR_SPECIFIC;OPT_MATH</DCC_Define>
+    <DCC_Optimize>False</DCC_Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Optimize>False</DCC_Optimize>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_DcuOutput>Temp</DCC_DcuOutput>
+    <DCC_ObjOutput>Temp</DCC_ObjOutput>
+    <DCC_HppOutput>Temp</DCC_HppOutput>
+    <DCC_BplOutput>Temp</DCC_BplOutput>
+    <DCC_DcpOutput>Temp</DCC_DcpOutput>
+    <DCC_UnitSearchPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_UnitSearchPath>
+    <DCC_ResourcePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_ResourcePath>
+    <DCC_ObjPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_ObjPath>
+    <DCC_IncludePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\Source\ToolsAPI;Help;Res;Src\CellML;Src\Common;Src\Extra\Delphi\VCL;Src\Extra\CVODE;Src\Extra\DeCAL;Src\Extra\FastCode;Src\Extra\FastMM4;Src\Extra\FastMove;Src\Extra\OpenGL;Src\Extra\SynEdit\Source;Src\Extra\SynEdit\SynGen;Src\Extra\JCL\Experts\Debug\Converter;Src\Extra\JCL\Experts\Debug\Dialog;Src\Extra\JCL\Source\Common;Src\Extra\JCL\Source\Include;Src\Extra\JCL\Source\Windows;Src\Extra\JVCL\Common;Src\Extra\JVCL\Resources;Src\Extra\JVCL\Run;Src\Extra\Virtual Treeview\Source;Src\Extra\WCrypt2;Src\GUI;Src\ODE;Src\VCL</DCC_IncludePath>
+    <DCC_Define>COR_SPECIFIC;OPT_MATH</DCC_Define>
+    <DCC_IntegerOverflowCheck>True</DCC_IntegerOverflowCheck>
+    <DCC_RangeChecking>True</DCC_RangeChecking>
+    <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="DebugSourceDirs">$(BDS)\Source\Indy10\Core\;$(BDS)\Source\Indy10\Protocols\;$(BDS)\Source\Indy10\System\;C:\Program Files\CodeGear\RAD Studio\5.0\source\Indy10\System\;C:\Program Files\CodeGear\RAD Studio\5.0\source\Indy10\Core\</Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">0</VersionInfo><VersionInfo Name="MinorVer">9</VersionInfo><VersionInfo Name="Release">31</VersionInfo><VersionInfo Name="Build">1409</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">2057</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">University of Oxford</VersionInfoKeys><VersionInfoKeys Name="FileDescription">Cellular Open Resource</VersionInfoKeys><VersionInfoKeys Name="FileVersion">0.9.31.1409</VersionInfoKeys><VersionInfoKeys Name="InternalName">COR</VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">0.9</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">COR.dpr</Source></Source><Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <PropertyGroup>
+  </PropertyGroup>
+  <ItemGroup>
+    <DelphiCompile Include="COR.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <RcCompile Include="Res\Resources.rc">
+      <Form>Res\Resources.res</Form>
+    </RcCompile>
+    <DCCReference Include="Src\CellML\CellMLAPI.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIExportEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToCellMLASCIIEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToCellMLFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToCFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToCMCFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToCPPFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToDelphiForWin32FileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToFortran77FileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToJavaFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToMATLABFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToMCEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToMSWordFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToPascalFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLAPIToTeXFileEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLASCIIToCellMLAPIEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLFileToCellMLAPIEngine.pas" />
+    <DCCReference Include="Src\CellML\CellMLScannerEngine.pas" />
+    <DCCReference Include="Src\Common\Cell.pas" />
+    <DCCReference Include="Src\Common\Common.pas" />
+    <DCCReference Include="Src\Common\CORCommon.pas" />
+    <DCCReference Include="Src\Common\Engine.pas" />
+    <DCCReference Include="Src\Common\OptMath.pas" />
+    <DCCReference Include="Src\GUI\About.pas">
+      <Form>AboutForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\CommandViewer.pas">
+      <Form>CommandViewerFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Computation.pas">
+      <Form>ComputationFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Console.pas">
+      <Form>ConsoleFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Contents.pas">
+      <Form>ContentsFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Dockable.pas">
+      <Form>DockableFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\DockSites.pas" />
+    <DCCReference Include="Src\GUI\Editor.pas">
+      <Form>EditorFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Generic.pas">
+      <Form>GenericForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\GraphPanel.pas">
+      <Form>GraphPanelFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Main.pas">
+      <Form>MainForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Msg.pas">
+      <Form>MsgForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Msgs.pas">
+      <Form>MsgsFrame</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Options.pas">
+      <Form>OptionsForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Password.pas">
+      <Form>PasswordForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Properties.pas">
+      <Form>PropertiesFrame</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\SplashScreen.pas">
+      <Form>SplashScreenForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\Update.pas">
+      <Form>UpdateForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\GUI\VersionInfo.pas">
+      <Form>VersionInfoForm</Form>
+    </DCCReference>
+    <DCCReference Include="Src\ODE\ODE2ndOrderRungeKuttaIntegrator.pas" />
+    <DCCReference Include="Src\ODE\ODE4thOrderRungeKuttaIntegrator.pas" />
+    <DCCReference Include="Src\ODE\ODECVODEIntegrator.pas" />
+    <DCCReference Include="Src\ODE\ODEFixedTimeStepIntegrator.pas" />
+    <DCCReference Include="Src\ODE\ODEForwardEulerIntegrator.pas" />
+    <DCCReference Include="Src\ODE\ODEIntegrator.pas" />
+    <DCCReference Include="Src\VCL\CmdGraph.pas" />
+    <DCCReference Include="Src\VCL\OGL.pas" />
+    <DCCReference Include="Src\VCL\OGLGraphPanel.pas" />
+    <DCCReference Include="Src\VCL\RippledBitmap.pas" />
+    <DCCReference Include="Src\VCL\SyntaxEdit.pas" />
+    <DCCReference Include="Src\VCL\VSTListBox.pas" />
+  </ItemGroup>
+</Project>

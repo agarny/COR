@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:05:53 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="exponent" cmeta:id="van_der_pol_model_1928" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <component name="main">
+      <units name="per_second">
+         <unit units="second" exponent="-1"/>
+      </units>
+      <variable name="time" units="second"/>
+      <variable name="x" units="dimensionless" initial_value="-2"/>
+      <variable name="y" units="dimensionless" initial_value="0"/>
+      <variable name="epsilon" units="dimensionless" initial_value="1"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>x</ci>
+            </apply>
+            <apply>
+               <times/>
+               <apply>
+                  <root/>
+                  <degree>
+                     <apply>
+                        <minus/>
+                        <apply>
+                           <root/>
+                           <apply>
+                              <cosh/>
+                              <apply>
+                                 <arcsinh/>
+                                 <apply>
+                                    <divide/>
+                                    <apply>
+                                       <power/>
+                                       <apply>
+                                          <root/>
+                                          <degree>
+                                             <apply>
+                                                <divide/>
+                                                <apply>
+                                                   <minus/>
+                                                   <cn cellml:units="dimensionless">7</cn>
+                                                </apply>
+                                                <cn cellml:units="dimensionless">3</cn>
+                                             </apply>
+                                          </degree>
+                                          <apply>
+                                             <log/>
+                                             <logbase>
+                                                <cn cellml:units="dimensionless">5</cn>
+                                             </logbase>
+                                             <cn cellml:units="dimensionless">3</cn>
+                                          </apply>
+                                       </apply>
+                                       <apply>
+                                          <root/>
+                                          <cn cellml:units="dimensionless">15</cn>
+                                       </apply>
+                                    </apply>
+                                    <apply>
+                                       <plus/>
+                                       <apply>
+                                          <log/>
+                                          <cn cellml:units="dimensionless">3</cn>
+                                       </apply>
+                                       <apply>
+                                          <power/>
+                                          <apply>
+                                             <minus/>
+                                             <cn cellml:units="dimensionless">5</cn>
+                                             <cn cellml:units="dimensionless">2</cn>
+                                          </apply>
+                                          <cn cellml:units="dimensionless">2</cn>
+                                       </apply>
+                                    </apply>
+                                 </apply>
+                              </apply>
+                           </apply>
+                        </apply>
+                     </apply>
+                  </degree>
+                  <ci>y</ci>
+               </apply>
+               <cn cellml:units="per_second">1</cn>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>y</ci>
+            </apply>
+            <apply>
+               <times/>
+               <apply>
+                  <minus/>
+                  <apply>
+                     <times/>
+                     <ci>epsilon</ci>
+                     <apply>
+                        <minus/>
+                        <cn cellml:units="dimensionless">1</cn>
+                        <apply>
+                           <power/>
+                           <ci>x</ci>
+                           <ci>x</ci>
+                        </apply>
+                     </apply>
+                     <ci>y</ci>
+                  </apply>
+                  <ci>x</ci>
+               </apply>
+               <cn cellml:units="per_second">1</cn>
+            </apply>
+         </apply>
+      </math>
+   </component>
+</model>

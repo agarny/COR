@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This CellML file was generated on 15/04/2009 at 18:06:17 using:
+
+COR (0.9.31.1203)
+Copyright 2002-2009 Dr Alan Garny
+http://COR.physiol.ox.ac.uk/ - COR@physiol.ox.ac.uk
+
+CellML 1.0 was used to generate this model
+http://www.CellML.org/
+-->
+<model name="machine_code" cmeta:id="machine_code" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+   <component name="membrane">
+      <variable name="time" units="second"/>
+      <variable name="Y0" units="dimensionless" initial_value="0"/>
+      <variable name="Y1" units="dimensionless" initial_value="1"/>
+      <variable name="Y1r" units="dimensionless" initial_value="1"/>
+      <variable name="Y2" units="dimensionless" initial_value="2"/>
+      <variable name="Y3" units="dimensionless" initial_value="3"/>
+      <variable name="Y3r" units="dimensionless" initial_value="3"/>
+      <variable name="Y4" units="dimensionless" initial_value="4"/>
+      <variable name="Y5" units="dimensionless" initial_value="5"/>
+      <variable name="Y6" units="dimensionless" initial_value="6"/>
+      <variable name="Y7" units="dimensionless" initial_value="7"/>
+      <variable name="Y8" units="dimensionless" initial_value="8"/>
+      <variable name="Y9" units="dimensionless" initial_value="9"/>
+      <variable name="Y10" units="dimensionless" initial_value="10"/>
+      <variable name="Y11" units="dimensionless" initial_value="11"/>
+      <variable name="Y12" units="dimensionless" initial_value="12"/>
+      <variable name="Y13" units="dimensionless" initial_value="13"/>
+      <variable name="Y14" units="dimensionless" initial_value="14"/>
+      <variable name="Y15" units="dimensionless" initial_value="15"/>
+      <variable name="Y16" units="dimensionless" initial_value="16"/>
+      <variable name="Cst0" units="dimensionless" initial_value="0"/>
+      <variable name="Cst1" units="dimensionless" initial_value="1"/>
+      <variable name="Cst2" units="dimensionless" initial_value="2"/>
+      <variable name="Cst3" units="dimensionless" initial_value="3"/>
+      <variable name="Cst4" units="dimensionless" initial_value="4"/>
+      <variable name="Cst5" units="dimensionless" initial_value="5"/>
+      <variable name="Cst6" units="dimensionless" initial_value="6"/>
+      <variable name="Cst7" units="dimensionless" initial_value="7"/>
+      <variable name="Cst8" units="dimensionless" initial_value="8"/>
+      <variable name="Cst9" units="dimensionless" initial_value="9"/>
+      <variable name="Cst10" units="dimensionless" initial_value="10"/>
+      <variable name="Cst11" units="dimensionless" initial_value="11"/>
+      <variable name="Cst12" units="dimensionless" initial_value="12"/>
+      <variable name="Cst13" units="dimensionless" initial_value="13"/>
+      <variable name="Cst14" units="dimensionless" initial_value="14"/>
+      <variable name="Cst15" units="dimensionless" initial_value="15"/>
+      <variable name="Cst16" units="dimensionless" initial_value="16"/>
+      <variable name="CompVar0" units="dimensionless"/>
+      <variable name="CompVar1" units="dimensionless"/>
+      <variable name="CompVar2" units="dimensionless"/>
+      <variable name="CompVar3" units="dimensionless"/>
+      <variable name="CompVar4" units="dimensionless"/>
+      <variable name="CompVar5" units="dimensionless"/>
+      <variable name="CompVar6" units="dimensionless"/>
+      <variable name="CompVar7" units="dimensionless"/>
+      <variable name="CompVar8" units="dimensionless"/>
+      <variable name="CompVar9" units="dimensionless"/>
+      <variable name="CompVar10" units="dimensionless"/>
+      <variable name="CompVar11" units="dimensionless"/>
+      <variable name="CompVar12" units="dimensionless"/>
+      <variable name="CompVar13" units="dimensionless"/>
+      <variable name="CompVar14" units="dimensionless"/>
+      <variable name="CompVar15" units="dimensionless"/>
+      <variable name="CompVar16" units="dimensionless"/>
+      <variable name="CompVar0p" units="dimensionless"/>
+      <variable name="CompVar1p" units="dimensionless"/>
+      <variable name="CompVar2p" units="dimensionless"/>
+      <variable name="CompVar3p" units="dimensionless"/>
+      <variable name="CompVar4p" units="dimensionless"/>
+      <variable name="CompVar9p" units="dimensionless"/>
+      <variable name="CompVar0m" units="dimensionless"/>
+      <variable name="CompVar1m" units="dimensionless"/>
+      <variable name="CompVar2m" units="dimensionless"/>
+      <variable name="CompVar3m0" units="dimensionless"/>
+      <variable name="CompVar3m1" units="dimensionless"/>
+      <variable name="CompVar3m9" units="dimensionless"/>
+      <variable name="CompVar9m" units="dimensionless"/>
+      <variable name="CompVar0t" units="dimensionless"/>
+      <variable name="CompVar1t" units="dimensionless"/>
+      <variable name="CompVar9t" units="dimensionless"/>
+      <variable name="CompVar0d" units="dimensionless"/>
+      <variable name="CompVar1d" units="dimensionless"/>
+      <variable name="CompVar2d" units="dimensionless"/>
+      <variable name="CompVar3d0" units="dimensionless"/>
+      <variable name="CompVar3d1" units="dimensionless"/>
+      <variable name="CompVar3d9" units="dimensionless"/>
+      <variable name="CompVar9d" units="dimensionless"/>
+      <variable name="Test0" units="dimensionless"/>
+      <variable name="Test1" units="dimensionless"/>
+      <variable name="Test2" units="dimensionless"/>
+      <variable name="Test3" units="dimensionless"/>
+      <variable name="Test4" units="dimensionless"/>
+      <variable name="Test5" units="dimensionless"/>
+      <variable name="Test6" units="dimensionless"/>
+      <variable name="Test7" units="dimensionless"/>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y0</ci>
+            </apply>
+            <apply>
+               <plus/>
+               <ci>Y0</ci>
+               <ci>time</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y1</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <ci>Y1</ci>
+               <ci>time</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y1r</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <ci>time</ci>
+               <apply>
+                  <times/>
+                  <ci>Y1</ci>
+                  <ci>Y1</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y2</ci>
+            </apply>
+            <apply>
+               <times/>
+               <ci>Y2</ci>
+               <ci>time</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y3</ci>
+            </apply>
+            <apply>
+               <divide/>
+               <ci>Y3</ci>
+               <ci>time</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y3r</ci>
+            </apply>
+            <apply>
+               <divide/>
+               <ci>time</ci>
+               <apply>
+                  <plus/>
+                  <ci>Y3</ci>
+                  <ci>Y3</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y4</ci>
+            </apply>
+            <apply>
+               <plus/>
+               <ci>Y4</ci>
+               <cn cellml:units="dimensionless">4</cn>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y5</ci>
+            </apply>
+            <apply>
+               <minus/>
+               <ci>Y5</ci>
+               <cn cellml:units="dimensionless">5</cn>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y6</ci>
+            </apply>
+            <apply>
+               <times/>
+               <ci>Y6</ci>
+               <cn cellml:units="dimensionless">6</cn>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y7</ci>
+            </apply>
+            <apply>
+               <divide/>
+               <ci>Y7</ci>
+               <cn cellml:units="dimensionless">7</cn>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y8</ci>
+            </apply>
+            <cn cellml:units="dimensionless">0</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y9</ci>
+            </apply>
+            <cn cellml:units="dimensionless">1</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y10</ci>
+            </apply>
+            <pi/>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y11</ci>
+            </apply>
+            <cn cellml:units="dimensionless">3.14</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y12</ci>
+            </apply>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y11</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y13</ci>
+            </apply>
+            <ci>Cst13</ci>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y14</ci>
+            </apply>
+            <ci>CompVar14</ci>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y15</ci>
+            </apply>
+            <ci>Y15</ci>
+         </apply>
+         <apply>
+            <eq/>
+            <apply>
+               <diff/>
+               <bvar>
+                  <ci>time</ci>
+               </bvar>
+               <ci>Y16</ci>
+            </apply>
+            <ci>Y16</ci>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar0</ci>
+            <cn cellml:units="dimensionless">0</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar1</ci>
+            <cn cellml:units="dimensionless">1</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar2</ci>
+            <cn cellml:units="dimensionless">2</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3</ci>
+            <cn cellml:units="dimensionless">3</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar4</ci>
+            <cn cellml:units="dimensionless">4</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar5</ci>
+            <cn cellml:units="dimensionless">5</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar6</ci>
+            <cn cellml:units="dimensionless">6</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar7</ci>
+            <cn cellml:units="dimensionless">7</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar8</ci>
+            <cn cellml:units="dimensionless">8</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar9</ci>
+            <cn cellml:units="dimensionless">9</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar10</ci>
+            <cn cellml:units="dimensionless">10</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar11</ci>
+            <cn cellml:units="dimensionless">11</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar12</ci>
+            <cn cellml:units="dimensionless">12</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar13</ci>
+            <cn cellml:units="dimensionless">13</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar14</ci>
+            <cn cellml:units="dimensionless">14</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar15</ci>
+            <cn cellml:units="dimensionless">15</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar16</ci>
+            <cn cellml:units="dimensionless">16</cn>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar0p</ci>
+            <apply>
+               <plus/>
+               <cn cellml:units="dimensionless">0</cn>
+               <ci>Y0</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar1p</ci>
+            <apply>
+               <plus/>
+               <cn cellml:units="dimensionless">1</cn>
+               <ci>Y1</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar2p</ci>
+            <apply>
+               <plus/>
+               <cn cellml:units="dimensionless">2</cn>
+               <apply>
+                  <diff/>
+                  <bvar>
+                     <ci>time</ci>
+                  </bvar>
+                  <ci>Y2</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3p</ci>
+            <apply>
+               <plus/>
+               <cn cellml:units="dimensionless">3</cn>
+               <ci>Cst3</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar4p</ci>
+            <apply>
+               <plus/>
+               <cn cellml:units="dimensionless">4</cn>
+               <ci>CompVar4</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar9p</ci>
+            <apply>
+               <plus/>
+               <cn cellml:units="dimensionless">9</cn>
+               <ci>Y9</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar0m</ci>
+            <apply>
+               <minus/>
+               <cn cellml:units="dimensionless">0</cn>
+               <ci>Y0</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar1m</ci>
+            <apply>
+               <minus/>
+               <cn cellml:units="dimensionless">1</cn>
+               <ci>Y1</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar2m</ci>
+            <apply>
+               <minus/>
+               <cn cellml:units="dimensionless">2</cn>
+               <apply>
+                  <times/>
+                  <ci>Y2</ci>
+                  <ci>Y2</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3m0</ci>
+            <apply>
+               <minus/>
+               <ci>Y0</ci>
+               <apply>
+                  <times/>
+                  <cn cellml:units="dimensionless">3</cn>
+                  <cn cellml:units="dimensionless">3</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3m1</ci>
+            <apply>
+               <minus/>
+               <ci>Y1</ci>
+               <apply>
+                  <times/>
+                  <cn cellml:units="dimensionless">3</cn>
+                  <cn cellml:units="dimensionless">3</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3m9</ci>
+            <apply>
+               <minus/>
+               <ci>Y9</ci>
+               <apply>
+                  <times/>
+                  <cn cellml:units="dimensionless">3</cn>
+                  <cn cellml:units="dimensionless">3</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar9m</ci>
+            <apply>
+               <minus/>
+               <cn cellml:units="dimensionless">9</cn>
+               <ci>Y9</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar0t</ci>
+            <apply>
+               <times/>
+               <cn cellml:units="dimensionless">0</cn>
+               <ci>Y0</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar1t</ci>
+            <apply>
+               <times/>
+               <cn cellml:units="dimensionless">1</cn>
+               <ci>Y1</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar9t</ci>
+            <apply>
+               <times/>
+               <cn cellml:units="dimensionless">9</cn>
+               <ci>Y9</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar0d</ci>
+            <apply>
+               <divide/>
+               <cn cellml:units="dimensionless">0</cn>
+               <ci>Y0</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar1d</ci>
+            <apply>
+               <divide/>
+               <cn cellml:units="dimensionless">1</cn>
+               <ci>Y1</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar2d</ci>
+            <apply>
+               <divide/>
+               <cn cellml:units="dimensionless">2</cn>
+               <apply>
+                  <plus/>
+                  <ci>Y2</ci>
+                  <ci>Y2</ci>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3d0</ci>
+            <apply>
+               <divide/>
+               <ci>Y0</ci>
+               <apply>
+                  <plus/>
+                  <cn cellml:units="dimensionless">3</cn>
+                  <cn cellml:units="dimensionless">3</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3d1</ci>
+            <apply>
+               <divide/>
+               <ci>Y1</ci>
+               <apply>
+                  <plus/>
+                  <cn cellml:units="dimensionless">3</cn>
+                  <cn cellml:units="dimensionless">3</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar3d9</ci>
+            <apply>
+               <divide/>
+               <ci>Y9</ci>
+               <apply>
+                  <plus/>
+                  <cn cellml:units="dimensionless">3</cn>
+                  <cn cellml:units="dimensionless">3</cn>
+               </apply>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>CompVar9d</ci>
+            <apply>
+               <divide/>
+               <cn cellml:units="dimensionless">9</cn>
+               <ci>Y9</ci>
+            </apply>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test0</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <ci>time</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test1</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <cn cellml:units="second">1</cn>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test2</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <ci>Y0</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test3</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <ci>Y1</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test4</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <ci>Y9</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test5</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <apply>
+                        <diff/>
+                        <bvar>
+                           <ci>time</ci>
+                        </bvar>
+                        <ci>Y0</ci>
+                     </apply>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test6</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <ci>Cst0</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+         <apply>
+            <eq/>
+            <ci>Test7</ci>
+            <piecewise>
+               <piece>
+                  <cn cellml:units="dimensionless">1</cn>
+                  <apply>
+                     <eq/>
+                     <ci>time</ci>
+                     <ci>CompVar0</ci>
+                  </apply>
+               </piece>
+               <otherwise>
+                  <cn cellml:units="dimensionless">0</cn>
+               </otherwise>
+            </piecewise>
+         </apply>
+      </math>
+   </component>
+</model>
